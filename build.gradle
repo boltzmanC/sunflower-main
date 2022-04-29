@@ -20,7 +20,7 @@ buildscript {
         // Sdk and tools
         compileSdkVersion = 30
         minSdkVersion = 21
-        targetSdkVersion = 30
+        targetSdkVersion = 31
 
         // App dependencies
         appCompatVersion = '1.1.0'
@@ -62,6 +62,9 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+
+
+
     }
 }
 

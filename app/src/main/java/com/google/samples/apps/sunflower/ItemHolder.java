@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-package com.google.samples.apps.sunflower
+package com.google.samples.apps.sunflower;
 
-import android.app.Application
-import androidx.work.Configuration
-import dagger.hilt.android.HiltAndroidApp
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
+public class ItemHolder extends RecyclerView.ViewHolder {
+    private final TextView textView;
 
-
-
-@HiltAndroidApp
-class MainApplication : Application(), Configuration.Provider {
-    override fun getWorkManagerConfiguration(): Configuration =
-                Configuration.Builder()
-                        .setMinimumLoggingLevel(if (BuildConfig.DEBUG) android.util.Log.DEBUG else android.util.Log.ERROR)
-                        .build()
+    public ItemHolder(@NonNull View itemView) {
+        super(itemView);
+        textView = itemView.findViewById(R.id.tv_id);
     }
 
-
+    void bind(String text) {
+        textView.setText(text);
+    }
+}
